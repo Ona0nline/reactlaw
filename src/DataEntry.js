@@ -1,6 +1,7 @@
 // src/components/AddCase.js
 import React, { useState } from 'react';
 import DataDisplay from './DataDisplay';
+import SearchEngine from './SearchEngine';
 import axios from 'axios';
 
 function AddCase() {
@@ -36,6 +37,12 @@ function AddCase() {
                 setCases(function(prevCases) {
                     return [...prevCases, caseData];
                 });
+
+                setCaseFile('')
+                setCaseNumber('')
+                setEmail('')
+                setSurname('')
+                setName('')
             })
             .catch(function(error) {
                 console.error('There was an error!', error);
@@ -45,6 +52,7 @@ function AddCase() {
     // Render the component
     return (
       <div>
+        <legend><h2>Capture case content:</h2></legend>
         <form onSubmit={handleSubmit}>
             <input 
                 type="text" 
@@ -97,6 +105,8 @@ function AddCase() {
             <button type="submit">Add Case</button>
         </form>
         <DataDisplay cases={cases}/>
+        <SearchEngine/>
+
         </div>
     );
 }

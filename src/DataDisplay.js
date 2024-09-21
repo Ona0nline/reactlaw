@@ -2,6 +2,7 @@ import React from "react";
 
 export default function DataDisplay(props){
   return (<div>
+    {props.cases.length > 0 && 
     <table>
       <thead>
         <tr>
@@ -25,5 +26,8 @@ export default function DataDisplay(props){
         })}
       </tbody>
     </table>
+    
+    }
+    
   </div>)
 }
