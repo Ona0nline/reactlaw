@@ -30,7 +30,7 @@ export default function SearchEngine(){
 
   // FUNCTION TO MAKE THE API CALL, CALLED UPON SUBMIT
   function handleSearch(){
-    axios.get('http://localhost:5000/search_case',{params:{case_file:searchQuery}})
+    axios.get('https://case-management-system-flask-35b7ddb675ce.herokuapp.com/',{params:{case_file:searchQuery}})
     .then(handleResponse)
     .catch((error)=>{
       console.log("Error: ",error)
