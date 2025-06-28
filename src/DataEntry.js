@@ -29,7 +29,7 @@ function AddCase() {
         };
 
         // Send POST request
-        axios.post('https://case-management-system-flask-35b7ddb675ce.herokuapp.com/', caseData)
+        axios.post('https://case-management-system-flask-35b7ddb675ce.herokuapp.com/add_case', caseData)
             .then(function(response) {
               console.log(response.data)
                 alert(response.data.message);
