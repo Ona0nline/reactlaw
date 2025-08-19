@@ -30,7 +30,7 @@ export default function SearchEngine(){
 
   // FUNCTION TO MAKE THE API CALL, CALLED UPON SUBMIT
   function handleSearch(){
-    axios.get('https://case-management-system-flask-35b7ddb675ce.herokuapp.com/search_case',{params:{case_file:searchQuery}})
+    axios.get('http://case-management-system-flask-35b7ddb675ce.herokuapp.com/search_case',{params:{case_file:searchQuery}})
     .then(handleResponse)
     .catch((error)=>{
       console.log("Error: ",error)
@@ -39,15 +39,22 @@ export default function SearchEngine(){
   }
 
   return (<div>
-    <form onSubmit={handleSubmit}>
-      <legend>Search for a Case File:</legend>
+  
+
+    <div className="search">
+      <form onSubmit={handleSubmit}>
+      <legend className="legendSearch">Search for a Case File:</legend>
       {/* ensures that the input value is always tied to the search query state */}
       <input onChange={handleInputChange} value={searchQuery} type="search" placeholder="Eg. Arson"/>
-      <input type="submit" value="Submit"/>
+      <input className="submit" type="submit" value="Submit"/>
 
     </form>
+    </div>
+    
     {/* && is for conditional rendering in javascript */}
- {casesFound.length > 0 && (
+
+    <div className="cases">
+    {casesFound.length > 0 && (
         <div>
           <h1>Cases Found:</h1>
           <ul>
@@ -79,5 +86,7 @@ export default function SearchEngine(){
           </ul>
         </div>
       )}
+    </div>
+ 
   </div>)
 }

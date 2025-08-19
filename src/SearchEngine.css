@@ -6,3 +6,32 @@ body{
 .table,th,td{
   border: 1px solid;
 }
+
+.legendSearch{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.submit{
+        background-color: aliceblue;
+          width: 80px;
+          height: 28px;
+          color: #031D44;
+          font-size: 14px;
+          border-radius: 8px;
+          margin-top: 20px;
+          border-color: #031D44;
+          margin-left: 5px;
+}
+
+.submit:hover{
+    background-color: #031D44;
+      width: 80px;
+      height: 28px;
+      color: aliceblue;
+      font-size: 14px;
+      border-radius: 8px;
+      margin-top: 20px;
+      border-color: aliceblue;
+      
+}

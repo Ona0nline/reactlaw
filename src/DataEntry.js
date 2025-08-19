@@ -1,5 +1,7 @@
 // src/components/AddCase.js
 import React, { useState } from 'react';
+import "./DataEntry.css"
+
 import DataDisplay from './DataDisplay';
 import SearchEngine from './SearchEngine';
 import axios from 'axios';
@@ -51,59 +53,94 @@ function AddCase() {
 
     // Render the component
     return (
-      <div>
-        <legend><h2>Capture case content:</h2></legend>
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="text" 
+<div>
+    <div className="hero">
+        <h1 className='head'>Legal Case management system</h1>
+        <p>Streamlined case tracking and management system</p>
+        </div>
+
+        <div className='capture-container'>
+            <div className='scroll'>
+<legend><h2>Capture case content:</h2></legend>
+
+        <form className='formCapture'  onSubmit={handleSubmit}>
+
+            <div className='name'>
+            <label for="name">Name:</label>
+            <input className='textInput'
+                type="text" id='name'
                 value={name} 
                 onChange={function(event) {
                     setName(event.target.value);
                 }} 
-                placeholder="Name" 
+                placeholder="Franklin" 
                 required 
             />
-
-             <input 
+            </div>
+           
+           <div>
+            <label>Surname:</label>
+             <input className='textInput'
                 type="text" 
                 value={surname} 
                 onChange={function(event) {
                     setSurname(event.target.value);
                 }} 
-                placeholder="Surname" 
+                placeholder="Saint" 
                 required 
             />
-
-            <input 
+           </div>
+            
+            <div className='email'>
+            <label>Email:</label>
+            <input className='textInput'
                 type="email" 
                 value={email} 
                 onChange={function(event) {
                     setEmail(event.target.value);
                 }} 
-                placeholder="Email" 
+                placeholder="saintfrank@gmail.com" 
                 required 
             />
+            </div>
 
-            <input 
+            <div className='caseNumber'>
+            <label className='caseNumberLabel'>Case Number</label>
+            <input className='textInput'
                 type="text" 
                 value={caseNumber} 
                 onChange={function(event) {
                     setCaseNumber(event.target.value);
                 }} 
-                placeholder="Case Number" 
+                placeholder="LNN-0001" 
                 required 
             />
-            <input 
+            </div>
+            
+            
+           
+            <div className='caseFile'>
+            <label>Case file</label>
+            <input className='textInput'
                 type="text" 
                 value={caseFile} 
                 onChange={function(event) {
                     setCaseFile(event.target.value);
                 }} 
-                placeholder="Case File" 
+                placeholder="Drug possession" 
                 required 
             />
-            <button type="submit">Add Case</button>
+            </div>
+            
+        <div className='addCaseContainer'>  
+            <button className='addCaseButton' type="submit">Add Case</button>
+        </div>
+            
         </form>
+            </div>
+        </div>
+        
+        <br></br>
         <DataDisplay cases={cases}/>
         <SearchEngine/>
 

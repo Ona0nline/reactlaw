@@ -1,0 +1,61 @@
+h2{
+  color: #031D44;
+}
+
+.capture-container{
+  display: grid;
+  place-items: center;
+  
+}
+
+.scroll {
+  width: 700px;
+  height: 300px;
+  text-align: center;
+  background-color: white;
+  border-radius: 28px;
+
+}
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      margin-right: 120px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    label.caseNumberLabel{
+      display: block;
+        margin-bottom: 6px;
+        margin-right: 96px;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+    .textInput{
+        height: 25px;
+        width: 180px;
+    }
+
+    .formCapture{
+      display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
+
+    .addCaseButton{
+      background-color: #031D44;
+      width: 120px;
+      height: 38px;
+      color:aliceblue;
+      font-size: 18px;
+      border-radius: 16px;
+      margin-top: 20px;
+      border-color: aliceblue;
+    }
+
+    .addCaseContainer{
+      display: grid;
+      place-items: center;
+    }
